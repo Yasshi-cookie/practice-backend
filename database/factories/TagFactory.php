@@ -4,21 +4,20 @@ declare(strict_types=1);
 
 namespace Database\Factories;
 
-use App\Models\User;
-use Illuminate\Support\Str;
+use App\Models\Tag;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<\App\Models\User>
+ * @extends Factory<\App\Models\Tag>
  */
-final class UserFactory extends Factory
+final class TagFactory extends Factory
 {
     /**
     * The name of the factory's corresponding model.
     *
     * @var string
     */
-    protected $model = User::class;
+    protected $model = Tag::class;
 
     /**
     * Define the model's default state.
@@ -29,10 +28,6 @@ final class UserFactory extends Factory
     {
         return [
             'name' => fake()->name,
-            'email' => fake()->safeEmail,
-            'email_verified_at' => fake()->optional()->dateTime(),
-            'password' => bcrypt(fake()->password),
-            'remember_token' => Str::random(10),
         ];
     }
 }
